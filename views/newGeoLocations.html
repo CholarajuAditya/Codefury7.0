@@ -9,9 +9,12 @@
 </head>
 <body>
     <div id="myLocation">
+        <h1>My location</h1>
         <div id="map"></div>
-        <p>My location:</p>
+      <div class="address">
+        <img src="../assets/images/locationpin.png" alt="">
         <p id="locationName"></p>
+    </div>
     </div>
     <div id="addPlaces">
         <div class="top">
@@ -20,7 +23,9 @@
                 <div class="topBox">
                     <div class="locationCordinates">
                         <label for="latitude">Latitude:</label>
-                        <input type="text" id="latitude" name="latitude"><br><br>
+                        <input type="text" id="latitude" name="latitude">
+                        <div class="top-line"></div>
+                        <div class="under-line"></div><br><br>
                         <label for="longitude">Longitude:</label>
                         <input type="text" id="longitude" name="longitude"><br><br>
                     </div>
@@ -29,7 +34,7 @@
                         <p id="placeName"></p><br><br>
                     </div>
                 </div>
-                <p>Search for places:</p>
+                <p id="searchText">Search for places:</p>
                 <input id="place-search" type="text" placeholder="Search for places">
                 <div id="place-results"></div>
                 <div id="signUpMessage" style="display:none;"></div>

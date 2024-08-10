@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Spicy+Rice&display=swap');
 body{
+    
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 50px ;
+    background-image: radial-gradient(circle, rgb(203 213 225) 2px, #fff 2px);
+    background-size: 2.5rem 2.5rem;
 }
 
 #myLocation{
@@ -10,11 +15,82 @@ body{
     justify-content: center;
     align-items: center;
 }
+.address
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid #ff4c2d 4px;
+    padding: 10px;
+    border-top-left-radius:50px ;
+    border-bottom-left-radius:50px ;
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+    background-color: white;
+    font-family:"Noto Sans", sans-serif ;
+    font-weight: 500;
+}
+.address img{
+    padding: 5px;
+    border: solid #ff4c2d 2px;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+.locationCordinates input
+{    margin-left: 10px;
+    padding: 10px;
+    height: 10px;
+    width: clamp(100px, 100%, 200px);
+    border: 2px solid #0B2447;
+    font-size: 16px;
+    background: white;
+    outline: none;
+    box-shadow: 7px 7px 0px 0px #0B2447;
+    color: #ff4c2d;
+}
+#searchText
+{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+#place-search
+{
+    margin-left: 20px;
+    
+    padding: 10px;
+    height: 10px;
+    width: clamp(100px, 100%, 200px);
+    border: 2px solid #0B2447;
+    font-size: 16px;
+    background: white;
+    outline: none;
+    box-shadow: 7px 7px 0px 0px #0B2447;
+    color: red;
+}
+
 #place-results {
-    border: 1px solid #ccc;
+    border: none;
     max-height: 200px;
     overflow-y: auto;
     border-radius: 5px;
+}
+#submit-location
+{
+    margin-top: 20px;
+   width:50%;
+   margin-left: 13%;
+   border:none;
+   background-color: #000000;
+   color: white;
+   padding: 10px 5px;
+   font-family:"Noto Sans", sans-serif ;
+   font-weight: 500;
+   border-radius: 10px;
+   transition: 0.5s;
+   
+}
+#submit-location:hover{
+    transform: scale(1.05);
 }
 .result-item,
 #shelterResults .shelter-item {
@@ -33,10 +109,18 @@ iframe{
     margin: auto;
 }
 #addPlaces{
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #ff4c2d;
+    color: white;
+    border-radius: 10px;
+    font-family:"Noto Sans", sans-serif ;
+    font-weight: 500;
+    padding: 10px 0;
+    cursor: pointer;
 }
 #addPlaces .top{
     display: flex;
@@ -53,4 +137,47 @@ iframe{
 
 #addPlaces .rightAuto{
     width:50%;
+}
+#locationOption
+{
+    padding: 5px;
+    font-family:"Noto Sans", sans-serif ;
+    font-weight: 200;
+    height: 35px;
+    width:150px;
+    border: 2px solid #0B2447;
+    font-size: 12px;
+    background: white;
+    outline: none;
+    box-shadow: 7px 7px 0px 0px #0B2447;
+    color: red;
+}
+#locationOption option{
+    padding: 5px;
+    font-family:"Noto Sans", sans-serif ;
+    font-weight: 200;
+    height: 30px;
+    width:150px;
+    border: 2px solid #0B2447;
+    font-size: 12px;
+    background: white;
+    outline: none;
+}
+#radiusSelect
+{
+    margin-top: 50px;
+}
+#radius
+{
+    padding: 5px;
+    font-family:"Noto Sans", sans-serif ;
+    font-weight: 200;
+    height: 35px;
+    width:150px;
+    border: 2px solid #0B2447;
+    font-size: 12px;
+    background: white;
+    outline: none;
+    box-shadow: 7px 7px 0px 0px #0B2447;
+    color: red;
 }
