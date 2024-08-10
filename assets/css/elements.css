@@ -289,3 +289,25 @@ body::-webkit-scrollbar {
 footer p{
   color: white;
 }
+
+#container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 65vw;
+  margin: auto;
+  padding: 50px;
+  min-height: 80vh;
+}
+
+#container2 img {
+  height: 200px;
+  width: auto;
+  margin: 50px;
+}
+
+#container2 .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
