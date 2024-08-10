@@ -269,7 +269,7 @@ body::-webkit-scrollbar {
     }
   }
   footer {
-    background-color: #f00;
+    background-color: #1d0683;
     position: relative;
     bottom: 0;
     right: 0;
@@ -279,4 +279,8 @@ body::-webkit-scrollbar {
     align-items: center;
     width: 100vw;
     margin-top: 10px;
+}
+
+footer p{
+  color: white;
 }
