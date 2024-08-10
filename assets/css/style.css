@@ -15,28 +15,23 @@ body {
     color: #333;
 }
 
-
-
 /* About Us Section */
 .about-us-container {
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
     flex-direction: column;
     padding: 1rem;
 }
 
 #about-us {
     border: 1px solid #333;
-    width: 95%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
     border-radius: 10px;
 }
-
-
-
 
 /* Logo and Button Styling */
 #logo {
@@ -45,33 +40,58 @@ body {
 
 li>div {
     background-color: #f0f8ff;
-    border-radius: 30px;
+    border-radius: 20px;
     padding: 3px 0 0 3px;
     width: 55px;
 }
 
+/* What We Do Section */
 .what-we-do {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
-    padding: 50px;
+    grid-template-columns: 1fr;
+    padding-top: 50px;
     margin-bottom: 50px;
 }
 
+/* Content Card Styling */
 .what-we-do .content-card {
-    background-color: #51ff0cf8;
+    background-color: #131218;
     padding: 20px;
     border-radius: 15px;
+    color: #f0f8ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .what-we-do .content-card h3 {
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Merriweather', serif; /* Improve typography */
+    font-size: 1.5rem; /* Slightly larger font size */
+    color: #ff4c2d; /* Highlight the title with a different color */
 }
 
+/* Enhance content readability */
+.what-we-do .content-card p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* Hover Effect *
+
+/* Media Queries */
 @media(max-width: 800px) {
     .what-we-do {
         display: grid;
         grid-template-columns: 1fr;
+    }
+    
+    .what-we-do .content-card {
+        padding: 15px;
+    }
+    
+    .what-we-do .content-card h3 {
+        font-size: 1.25rem;
     }
 }

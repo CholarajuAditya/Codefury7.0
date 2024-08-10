@@ -28,6 +28,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./assets/css/popup.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
     <link rel="stylesheet" href="./assets/css/image-slider.css" />
     <link rel="stylesheet" href="./assets/css/sos.css" />
@@ -101,7 +102,20 @@
           <button id="sosButton">Send SOS</button>
         </div>
       </div>
+   
 
+      
+      <div id="popupModal" class="modal">
+          <div class="modal-content">
+              <span class="close-button" id="closePopup">&times;</span>
+              <div class="donate-content">
+                <h3>Help the needy Here!</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, temporibus excepturi! Ullam possimus ut necessitatibus dolores voluptatibus eligendi reprehenderit quo.</p>
+              </div>
+              <button id="goToPage">Donate here</button>
+          </div>
+      </div>
+  
       <div
         class="what-we-do"
         style="font-size: 1.3rem; line-height: 2rem; color: #1d0683"
@@ -222,5 +236,6 @@
       window.addEventListener("resize", updateMargin); // Update on resize
     };
   </script>
+  <script src="./assets/js/popup.js"></script>
   <script type="module" src="./assets/js/index.js"></script>
 </html>
