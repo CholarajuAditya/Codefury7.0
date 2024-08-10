@@ -1,0 +1,29 @@
+.notification-carousel {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    position: relative;
+}
+
+.carousel-content {
+    display: flex;
+    animation: scroll 10s linear infinite;
+}
+
+.notification {
+    padding: 10px;
+    margin-right: 50px; /* Space between notifications */
+    white-space: wrap;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
