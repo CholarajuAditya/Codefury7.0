@@ -20,6 +20,7 @@
     <nav id="navbar" style="display: flex">
       <div class="logo">
         <img src="./assets/images/codefurylogo.png" alt="nil" />
+        <p id="userName">Hello, User!</p>
       </div>
       <div class="navItems">
         <ul>
@@ -27,7 +28,7 @@
           <li><a href="#container3">About US</a></li>
           <li><a href="#container5">Contact Us</a></li>
           <button class="animated-button">
-            <span><a href="./views/login.html">Login</a></span>
+            <span><a href="./views/login.html" id="loginButton">Login</a></span>
             <span></span>
           </button>
         </ul>
@@ -41,9 +42,10 @@
     </nav>
     <div id="myNav" class="overlay">
       <div class="overlay-content">
-        <a href="#container2">About Us</a>
-        <a href="#container3">Our Team</a>
-        <a href="#container4">Services</a>
+        <a href="./index.html">Home</a>
+        <a href="./views/newGeoLocations.html">Shelters</a>
+        <a href="./views/resource.html">Resources</a>
+        <a href="./views/community.html">community</a>
         <a href="#container5">Contact Us</a>
       </div>
     </div>
@@ -179,8 +181,6 @@
         </div>
       </div>
     </footer>
-    <script src="./views/index.js"></script>
-    <script src="./assets/js/index.js"></script>
     <script src="./assets/js/image-slider.js"></script>
     <script src="./assets/js/sos.js"></script>
   </body>
@@ -220,4 +220,5 @@
       window.addEventListener("resize", updateMargin); // Update on resize
     };
   </script>
+  <script type="module" src="./assets/js/index.js"></script>
 </html>
