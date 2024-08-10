@@ -1,7 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { getFirestore, collection, addDoc,getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
 
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBsbAkrZy_mLQUZdLOFF64ASnGHQiAQ8Ag",
     authDomain: "codefury-eb612.firebaseapp.com",
@@ -11,51 +12,75 @@ const firebaseConfig = {
     appId: "1:186913768603:web:f9a79f83d46e03d32c323e"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-const uploadImage = async () => {
-    const inputfile = document.getElementById("image");
+
+document.getElementById('uploadForm').addEventListener('submit', async (event) => {
+    event.preventDefault();  // Prevent form submission
+
+    const fileInput = document.getElementById("image");
     const descriptionInput = document.getElementById("description");
-    const file = inputfile.files[0];
+    const file = fileInput.files[0];
     const description = descriptionInput.value;
 
-    if (file) {
-        // Upload the image to Firebase Storage
-        const storageRef = ref(storage, `uploaded_cards/${file.name}`);
-        await uploadBytes(storageRef, file);
-        const imageUrl = await getDownloadURL(storageRef);
-
-        // Add document to Firestore
+    if (file && description) {
         try {
+            // Create a storage reference
+            const storageRef = ref(storage, `uploaded_images/${file.name}`);
+            // Upload the file
+            const uploadResult = await uploadBytes(storageRef, file);
+            console.log("File uploaded:", uploadResult);
+
+            // Get the download URL
+            const imageUrl = await getDownloadURL(storageRef);
+            console.log("Image URL:", imageUrl);
+
+            // Add the document to Firestore
             await addDoc(collection(db, "community_posts"), {
                 description: description,
                 imageUrl: imageUrl,
-                timestamp: new Date() // Adding a timestamp field
+                timestamp: new Date()
             });
+            console.log("Document added to Firestore");
 
-            // Display the image and description on the page
-            const cardContainer = document.querySelector('.community-cards');
-            const card = document.createElement('div');
-            card.classList.add('card');
-            const img = document.createElement('img');
-            img.src = imageUrl;
-            img.classList.add('card_image');
-            const desc = document.createElement('p');
-            desc.textContent = description;
-            card.appendChild(img);
-            card.appendChild(desc);
-            cardContainer.appendChild(card);
+            // Clear form fields
+            fileInput.value = '';
+            descriptionInput.value = '';
+            alert("Image and description uploaded successfully!");
 
         } catch (error) {
-            console.error("Error adding document: ", error);
+            console.error("Error uploading image and description:", error);
+            alert("Error uploading image and description. Please try again.");
         }
+    } else {
+        alert("Please select an image and enter a description.");
     }
+});
+
+const displayImagesAndDescriptions = async () => {
+    const querySnapshot = await getDocs(collection(db, "community_posts"));
+    const communityCardsContainer = document.querySelector('.community-cards');
+
+    querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        const img = document.createElement('img');
+        img.src = data.imageUrl;
+        img.classList.add('card_image');
+
+        const desc = document.createElement('p');
+        desc.textContent = data.description;
+
+        card.appendChild(img);
+        card.appendChild(desc);
+        communityCardsContainer.appendChild(card);
+    });
 };
 
-const uploadButton = document.getElementById('submit');
-uploadButton.addEventListener('click', (e) => {
-    e.preventDefault(); // Prevent the form from submitting the traditional way
-    uploadImage();
-});
+// Call the function to display data when the page loads
+window.addEventListener('DOMContentLoaded', displayImagesAndDescriptions);

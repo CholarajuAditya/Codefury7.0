@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="form">
-        <form action="post">
+        <form action="post" id="uploadform">
             <label for="image">Upload your image here:</label>
-            <input type="file" name="image" id="image" accept="image/*">
+            <input type="file" name="image" id="image" accept="image/*" required>
             <label for="description">Enter description</label>
-            <input type="text" name="description" id="description">
+            <input type="text" name="description" id="description" required>
             <input type="button" value="Submit" id="submit">
         </form>
     </div>
