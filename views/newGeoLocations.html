@@ -8,21 +8,22 @@
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
     <link rel="stylesheet" href="../assets/css/elements.css">
 </head>
-<body>
+<body style="margin: 0; padding: 0;">
     <nav id="navbar" style="display: flex;">
         <div class="logo">
             <a href="../index.html"><img src="../assets/images/codefurylogo.png" alt="nil"></a>
+            <p id="userName">Hello, User!</p>
         </div>
         <div class="navItems">
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="./views/resource.html">Resources</a></li>
-                <li><a href="#container5">Contact Us</a></li>
+                <li><a href="./resource.html">Resources</a></li>
+                <a href="./community.html">community</a>
                 <button class="animated-button">
-                    <span><a href="./views/login.html">Login</a></span>
-                    <span></span>
+                  <span><a href="./login.html" id="loginButton">Login</a></span>
+                  <span></span>
                 </button>
-            </ul>
+              </ul>
         </div>
         <label class="hamburger" for="hamburger">
             <input type="checkbox" id="hamburger">
@@ -34,10 +35,10 @@
     <div id="myNav" class="overlay">
         <div class="overlay-content">
             <a href="../index.html">Home</a>
-            <li><a href="./newGeoLocations.html">Shelters</a></li>
-            <a href="./views/resource.html">Resources</a>
+            <a href="./newGeoLocations.html">Shelters</a>
+            <a href="./resource.html">Resources</a>
             <a href="./community.html">community</a>
-            <a href="#container5">Contact Us</a>
+            <a id="loginButton" href="./login.html">Login</a>
         </div>
     </div>
     <div id="myLocation">
@@ -115,6 +116,7 @@
         </div>
     </footer>
     <script type="module" src="../firebase/firebaseGeoLocation.js"></script>
+    <script type="module" src="../assets/js/index.js"></script>
 </body>
 <script>
     const hamburgerSwitch = document.querySelector('.hamburger input');
@@ -145,7 +147,7 @@
         
         function updateMargin() {
             var referenceHeight = referenceDiv.offsetHeight;
-            targetDiv.style.marginTop = referenceHeight+ 1 + 'px';
+            targetDiv.style.marginTop = referenceHeight+ -5 + 'px';
         }
 
         updateMargin(); // Initial call

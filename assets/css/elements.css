@@ -14,12 +14,17 @@ html{
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    position: fixed; 
+    position: static; 
     top: 0; 
     left: 0; 
     z-index: 98;
-    background-color: rgba(255, 76, 45, 0.9);
+    background-color: #FF4C2D;
     backdrop-filter: blur(10px);
+  }
+
+  #userName{
+    padding-left: 20px;
+    font-family:"Noto Sans", sans-serif ;
   }
   
   .logo {
