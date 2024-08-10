@@ -9,6 +9,7 @@ html{
     letter-spacing: 1px;
     font-family:"Noto Sans", sans-serif ;
     overflow-x: hidden;
+    margin: 0;
   }
   
   nav {
@@ -243,7 +244,7 @@ body::-webkit-scrollbar {
   }
   .overlay-content {
     position: relative;
-    top: 35%;
+    top: 25%;
     width: 100%;
     text-align: center; 
     margin-top: 30px;
@@ -269,6 +270,19 @@ body::-webkit-scrollbar {
       display: block;
       margin: 20px;
     }
+    #container2 .content{
+      box-sizing: border-box;
+      flex-direction: column;
+      padding: 30px;
+      border: 1px solid rgba(78, 101, 255, 1);
+      margin: 5px;
+      border-radius: 1rem;
+      width: 70vw;
+    }
+    #container2 img #image1{
+      width: 75vw;
+      height: auto;
+    }
   }
   footer {
     background-color: #112280;
@@ -282,8 +296,31 @@ body::-webkit-scrollbar {
     width: 100vw;
     margin-top: 10px;
     padding: 10px;
+    height: 75px;
 }
 
 footer p{
   color: white;
+}
+
+#container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 65vw;
+  margin: auto;
+  padding: 50px;
+  min-height: 80vh;
+}
+
+#container2 img {
+  height: 200px;
+  width: auto;
+  margin: 50px;
+}
+
+#container2 .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

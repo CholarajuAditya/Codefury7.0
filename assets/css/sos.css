@@ -1,6 +1,6 @@
 #sosButton {
     position: fixed;
-    bottom: 5rem;
+    bottom: 1rem;
     left: 20px;
     background-color: red;
     color: white;
@@ -30,3 +30,12 @@
         transform: scale(1.2);
     }
 }
+
+@media only screen and (width < 640px) {
+    #sosButton{
+        bottom: 1rem;
+        width: 3rem;
+        height: 3rem;
+    }
+    
+  }

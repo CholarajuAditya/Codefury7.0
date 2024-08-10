@@ -15,23 +15,11 @@ body {
     gap: 3rem;
     background-color: #ffffff;
     font-family: "Mukta", sans-serif;
-    margin: 0;
-    padding: 1rem;
-    overflow-x: hidden; /* Prevent horizontal overflow */
-    width: 100%;
-    min-height: 100vh; /* Ensure body covers the entire viewport */
-}
-
-h1 {
-    margin: 0;
-    text-align: center;
-    font-size: 2rem; /* Default size */
-}
-#header{
-    background-color: #ff4c2d;
-    display: flex;
-    justify-content: center;
-    
+    background-color: #0B2447;
+    background-image:
+    linear-gradient(to right, rgb(255, 255, 255) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255, 255, 255) 1px, transparent 1px);
+    background-size: 10rem 10rem;
 }
 h1 > a {
     padding: 5px 50px;
@@ -164,13 +152,10 @@ input[type="file"] {
     align-items: center;
     text-align: center;
     border-radius: 10px;
-    background-color: #0B2447;
-    background-image:
-        linear-gradient(to right, rgb(255, 255, 255) 1px, transparent 1px),
-        linear-gradient(to bottom, rgb(255, 255, 255) 1px, transparent 1px);
-    background-size: 10rem 10rem;
-    padding: 1.5rem;
-    width: 100%;
+    padding:30px;
+}
+.card{
+   font-weight: 400;
 }
 
 .card {
