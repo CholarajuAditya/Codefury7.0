@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Spicy+Rice&display=swap');
 html{
     scroll-behavior: smooth;
   }
@@ -7,6 +7,7 @@ html{
     font-weight: 500;
     font-size: larger;
     letter-spacing: 1px;
+    font-family:"Noto Sans", sans-serif ;
   }
   
   nav {
@@ -28,9 +29,10 @@ html{
   }
   
   .logo img {
-    height: 15vh;
-    padding: 20px 0;
-    border-radius: 1rem;
+    height: 7vh;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: white;
   }
 
   .navItems {
@@ -177,7 +179,7 @@ body::-webkit-scrollbar {
     position: absolute;
     height: 4px;
     width: 100%;
-    background: black;
+    background: white;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -227,7 +229,7 @@ body::-webkit-scrollbar {
     z-index: 1; 
     left: 0;
     top: 0;
-    backdrop-filter: blur(30px);
+    background-color: #0B2447;
     overflow-x: hidden; 
     transition: 0.5s;
   }
@@ -237,13 +239,15 @@ body::-webkit-scrollbar {
     width: 100%;
     text-align: center; 
     margin-top: 30px;
+    text-decoration: overline;
+    text-underline-offset: 10px;
+    text-decoration-color: white;
   }
   .overlay a {
     padding: 8px;
     text-decoration: none;
     font-size: 50px;
-    text-shadow: 0 0 10px rgba(78, 101, 255, 1); 
-    color: black;
+    color: white;
     display: block; 
     transition: 0.3s; 
   }

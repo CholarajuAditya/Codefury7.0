@@ -6,8 +6,40 @@
     <title>GeoAid</title>
     <link rel="stylesheet" href="../assets/css/geolocation.css">
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/elements.css">
 </head>
 <body>
+    <nav id="navbar" style="display: flex;">
+        <div class="logo">
+            <a href="../index.html"><img src="../assets/images/codefurylogo.png" alt="nil"></a>
+        </div>
+        <div class="navItems">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./views/resource.html">Resources</a></li>
+                <li><a href="#container5">Contact Us</a></li>
+                <button class="animated-button">
+                    <span><a href="./views/login.html">Login</a></span>
+                    <span></span>
+                </button>
+            </ul>
+        </div>
+        <label class="hamburger" for="hamburger">
+            <input type="checkbox" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </nav>
+    <div id="myNav" class="overlay">
+        <div class="overlay-content">
+            <a href="../index.html">Home</a>
+            <li><a href="./newGeoLocations.html">Shelters</a></li>
+            <a href="./views/resource.html">Resources</a>
+            <a href="./community.html">community</a>
+            <a href="#container5">Contact Us</a>
+        </div>
+    </div>
     <div id="myLocation">
         <h1>My location</h1>
         <div id="map"></div>
@@ -67,7 +99,57 @@
             </div>
         </div>
     </div>
-
+    <footer>
+        <div class="footer-container">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <i class='bx bxl-facebook-circle'></i>
+                <i class='bx bxl-instagram-alt'></i>
+                <i class='bx bxl-twitter'></i>
+                <i class='bx bxl-linkedin-square'></i>
+            </div>
+        </div>
+    </footer>
     <script type="module" src="../firebase/firebaseGeoLocation.js"></script>
 </body>
+<script>
+    const hamburgerSwitch = document.querySelector('.hamburger input');
+    const navFont = document.querySelectorAll('.overlay-content a');
+
+    hamburgerSwitch.addEventListener('change', function() {
+        if (this.checked) {
+            openNav();
+        } else {
+            closeNav();
+        }
+    });
+    navFont.forEach(link => {
+        link.addEventListener('click', function () {
+            closeNav();
+            hamburgerSwitch.click();
+        });
+    });
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    }
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+    window.onload = function() {
+        var referenceDiv = document.getElementById('navbar');
+        var targetDiv = document.getElementById('myLocation');
+        
+        function updateMargin() {
+            var referenceHeight = referenceDiv.offsetHeight;
+            targetDiv.style.marginTop = referenceHeight+ 1 + 'px';
+        }
+
+        updateMargin(); // Initial call
+        window.addEventListener('resize', updateMargin); // Update on resize
+    };
+</script>
 </html>
