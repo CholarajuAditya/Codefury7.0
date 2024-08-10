@@ -30,3 +30,11 @@
         transform: scale(1.2);
     }
 }
+
+@media only screen and (width < 640px) {
+    #sosButton{
+        bottom: 1rem;
+        width: 3rem;
+        height: 3rem;
+    }
+  }

@@ -243,7 +243,7 @@ body::-webkit-scrollbar {
   }
   .overlay-content {
     position: relative;
-    top: 35%;
+    top: 25%;
     width: 100%;
     text-align: center; 
     margin-top: 30px;
@@ -282,6 +282,7 @@ body::-webkit-scrollbar {
     width: 100vw;
     margin-top: 10px;
     padding: 10px;
+    height: 75px;
 }
 
 footer p{
