@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoAid</title>
+    <link rel="stylesheet" href="../assets/css/geolocation.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+</head>
+<body>
+    <div id="myLocation">
+        <div id="map"></div>
+        <p>My location:</p>
+        <p id="locationName"></p>
+    </div>
+    <div id="addPlaces">
+        <div class="top">
+            <div class="leftManual">
+                <p>Do you want to enter location of a Shelter Home?</p>
+                <div class="topBox">
+                    <div class="locationCordinates">
+                        <label for="latitude">Latitude:</label>
+                        <input type="text" id="latitude" name="latitude"><br><br>
+                        <label for="longitude">Longitude:</label>
+                        <input type="text" id="longitude" name="longitude"><br><br>
+                    </div>
+                    <div class="placeNameBox">
+                        <p>Place: </p>
+                        <p id="placeName"></p><br><br>
+                    </div>
+                </div>
+                <p>Search for places:</p>
+                <input id="place-search" type="text" placeholder="Search for places">
+                <div id="place-results"></div>
+                <div id="signUpMessage" style="display:none;"></div>
+                <input type="submit" value="Submit" id="submit-location">
+            </div>
+            <div class="rightAuto">
+                <br>
+                <p>Nearby shelters:</p>
+                <select id="locationOption">
+                    <option value="current">Use Current Location</option>
+                    <option value="manual">Enter Place Name</option>
+                </select>
+                <div id="radiusSelect">
+                    <label for="radius">Select Radius:</label>
+                    <select id="radius">
+                        <option value="1">1 km</option>
+                        <option value="5">5 km</option>
+                        <option value="10">10 km</option>
+                        <option value="20">20 km</option>
+                        <option value="50">50 km</option>
+                        <option value="100">100 km</option>
+                    </select>
+                </div>
+                <div id="manualPlace" style="display:none;">
+                    <p>Enter Place Name:</p>
+                    <input type="text" id="manualPlaceName" placeholder="Enter a place">
+                    <div id="manualPlace-results"></div> <!-- Add this div for displaying suggestions -->
+                </div>
+                <div id="shelterResults"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../firebase/firebaseGeoLocation.js"></script>
+</body>
+</html>
