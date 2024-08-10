@@ -6,75 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="module" src="../firebase/firebaseCommunity.js"></script>
-    <style>
-        .card {
-            width: 190px;
-            background: white;
-            padding: .4em;
-            border-radius: 6px;
-            }
-
-            .card-image {
-            background-color: rgb(236, 236, 236);
-            width: auto;
-            height: 230px;
-            border-radius: 6px 6px 0 0;
-            }
-
-            .card-image:hover {
-            transform: scale(0.98);
-            }
-
-            .category {
-            text-transform: uppercase;
-            font-size: 0.7em;
-            font-weight: 600;
-            color: rgb(63, 121, 230);
-            padding: 10px 7px 0;
-            }
-
-            .category:hover {
-            cursor: pointer;
-            }
-
-            .heading {
-            font-weight: 600;
-            color: rgb(88, 87, 87);
-            padding: 7px;
-            }
-
-            .heading:hover {
-            cursor: pointer;
-            }
-
-            .author {
-            color: gray;
-            font-weight: 400;
-            font-size: 11px;
-            padding-top: 20px;
-            }
-
-            .name {
-            font-weight: 600;
-            }
-
-            .name:hover {
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/community.css">
 </head>
 <body>
+    <h1><a href="#uploadform">Click here to show your contribution</a></h1>
+
+    <div class="community-cards"></div>
+    <footer>
     <div class="form">
         <form action="post" id="uploadform">
-            <label for="image">Upload your image here:</label>
-            <input type="file" name="image" id="image" accept="image/*" required>
-            <label for="description">Enter description</label>
-            <input type="text" name="description" id="description" required>
+            <div class="form-content">
+                <label for="image">Upload your image here:</label>
+                <input type="file" name="image" id="image" accept="image/*" required>
+            </div>
+            <div class="form-content">
+                <label for="description">Enter description:</label>
+                <input type="text" name="description" id="description" required >
+            </div>
+
             <input type="button" value="Submit" id="submit">
         </form>
     </div>
-    
-    
-    <div class="community-cards"></div>
+</footer>
 </body>
 </html>

@@ -1,0 +1,32 @@
+#sosButton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: red;
+    color: white;
+    /* padding: 15px 25px; */
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width:5rem;
+    height: 5rem;
+    word-wrap: break-word;
+    border-radius: 10rem;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: pulse 3s infinite;
+}
+#sosButton:hover {
+    background-color: darkred;
+}
+@keyframes pulse{
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+}

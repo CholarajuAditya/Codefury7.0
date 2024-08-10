@@ -1,24 +1,20 @@
-const sosLink = document.getElementById('SOS');
+document.getElementById('sosButton').addEventListener('click', () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const locationMessage = `SOS! I need help! My location is: https://www.google.com/maps?q=${latitude},${longitude}`;
 
-// Function to handle position updates
-function handlePosition(position) {
-    const { latitude, longitude } = position.coords;
-    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-    const message = `My location is: https://maps.google.com/?q=${latitude},${longitude}`;
-    
-    // Update the href attribute of the link to include the location in the SMS body
-    sosLink.href = `sms:+918971234144?body=${encodeURIComponent(message)}`;
-}
+            // Create the SMS link
+            const smsLink = `sms:+1234567890?body=${encodeURIComponent(locationMessage)}`;
 
-// Function to handle errors
-function handleError(error) {
-    console.error(`Error: ${error.message}`);
-}
+            // Redirect to the SMS link
+            window.location.href = smsLink;
 
-// Add event listener to the link
-sosLink.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent the default link behavior
-
-    // Start watching the position
-    navigator.geolocation.watchPosition(handlePosition, handleError);
-});
+        }, error => {
+            alert('Error getting location: ' + error.message);
+        });
+    } else {
+        alert('Geolocation is not supported by this browser.');
+    }
+})
