@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/footer.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <link rel="stylesheet" href="./assets/css/image-carousel.css"
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/css/image-slider.css">
 </head>
 <body>
     <nav id="navbar" style="display: flex;">
@@ -46,73 +46,37 @@
     <main id="mainOnlyForMargin">
         </div>
         <div class="about-us-container">
-            <div class="image-carousel">
-                <div class="image-slider">
-    
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img1">
+            <div class="slider">
+                <div class="list">
+                    <div class="item">
+                        <img src="img/1.jpg" alt="">
                     </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img2">
+                    <div class="item">
+                        <img src="img/2.jpg" alt="">
                     </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img3">
+                    <div class="item">
+                        <img src="img/3.jpg" alt="">
                     </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img4">
+                    <div class="item">
+                        <img src="img/4.jpg" alt="">
                     </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img2">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img3">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img4">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img2">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img3">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img4">
+                    <div class="item">
+                        <img src="img/5.jpg" alt="">
                     </div>
                 </div>
-                <div class="image-slider">
-    
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img1">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img2">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img3">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img4">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img2">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img3">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img4">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img2">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img3">
-                    </div>
-                    <div class="images-container">
-                        <img src="./assets/images/image.jpg" alt="img4">
-                    </div>
+                <div class="buttons">
+                    <button id="prev"><</button>
+                    <button id="next">></button>
                 </div>
+                <ul class="dots">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+           
             <div id="about-us">
                 <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo odio nulla magni delectus accusantium quae harum, illum, temporibus veniam maxime culpa nihil fuga deleniti molestiae quisquam obcaecati earum ducimus. Fuga, unde quas nam tenetur architecto inventore officiis corporis natus cum illum! Ut et repudiandae at reprehenderit, sapiente sed officiis non accusamus repellat commodi obcaecati error culpa veniam ea voluptates laborum explicabo possimus omnis ad nisi quod facere. Quis quod minima animi nostrum quas perferendis officiis dolor necessitatibus? Dignissimos porro odit rem sed vitae ea quia molestias beatae! Nulla maiores eligendi inventore tenetur autem ad, vitae magni minima fugiat blanditiis sint!
@@ -193,6 +157,7 @@
     </footer>
     <script src="./views/index.js"></script>
     <script src="./assets/js/index.js"></script>
+    <script src="image-slider.js"></script>
 </body>
 <script>
     const hamburgerSwitch = document.querySelector('.hamburger input');
