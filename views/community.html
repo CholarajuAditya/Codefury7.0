@@ -7,27 +7,99 @@
     <title>Document</title>
     <script type="module" src="../firebase/firebaseCommunity.js"></script>
     <link rel="stylesheet" href="../assets/css/community.css">
+    <link rel="stylesheet" href="../assets/css/elements.css">
 </head>
 <body>
+    <nav id="navbar" style="display: flex">
+        <div class="logo">
+          <img src="../assets/images/codefurylogo.png" alt="nil" />
+          <p id="userName">Hello, User!</p>
+        </div>
+        <div class="navItems">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./newGeoLocations.html">Shelters</a></li>
+            <li><a href="./resource.html">Resources</a></li>
+            <button class="animated-button">
+              <span><a href="./views/login.html" id="loginButton">Login</a></span>
+              <span></span>
+            </button>
+          </ul>
+        </div>
+        <label class="hamburger" for="hamburger">
+          <input type="checkbox" id="hamburger" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </nav>
+      <div id="myNav" class="overlay">
+        <div class="overlay-content">
+          <a href="../index.html">Home</a>
+          <a href="./newGeoLocations.html">Shelters</a>
+          <a href="./resource.html">Resources</a>
+          <a id="loginButton" href="./views/login.html">Login</a>
+        </div>
+      </div>
     <h1><a href="#uploadform">Click here to show your contribution</a></h1>
 
     <div class="community-cards"></div>
-    <footer>
-    <div class="form">
-        <form action="post" id="uploadform">
-            <div class="form-content">
-               <p id="imgText">Upload your Image Here!</p>
-                <label for="image" class="image">Upload image</label>
-                <input type="file" name="image" id="image" accept="image/*" required>
-            </div>
-            <div class="form-content">
-                <label for="description">Enter description for your Image:</label>
-                <input type="text" name="description" id="description" required >
-            </div>
-
-            <input type="button" value="Submit" id="submit">
-        </form>
+    <div>
+        <div class="form">
+            <form action="post" id="uploadform">
+                <div class="form-content">
+                   <p id="imgText">Upload your Image Here!</p>
+                    <label for="image" class="image">Upload image</label>
+                    <input type="file" name="image" id="image" accept="image/*" required>
+                </div>
+                <div class="form-content">
+                    <label for="description">Enter description for your Image:</label>
+                    <input type="text" name="description" id="description" required >
+                </div>
+    
+                <input type="button" value="Submit" id="submit">
+            </form>
+        </div>
     </div>
-</footer>
+    <footer>
+        <p>Ⓒ Team AidGrid</p>
+    </footer>
 </body>
+<script>
+    const hamburgerSwitch = document.querySelector('.hamburger input');
+    const navFont = document.querySelectorAll('.overlay-content a');
+
+    hamburgerSwitch.addEventListener('change', function() {
+        if (this.checked) {
+            openNav();
+        } else {
+            closeNav();
+        }
+    });
+    navFont.forEach(link => {
+        link.addEventListener('click', function () {
+            closeNav();
+            hamburgerSwitch.click();
+        });
+    });
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    }
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+    window.onload = function() {
+        var referenceDiv = document.getElementById('navbar');
+        var targetDiv = document.getElementById('mainBody');
+        
+        function updateMargin() {
+            var referenceHeight = referenceDiv.offsetHeight;
+            targetDiv.style.marginTop = referenceHeight+ 1 + 'px';
+        }
+
+        updateMargin(); // Initial call
+        window.addEventListener('resize', updateMargin); // Update on resize
+    };
+</script>
+<script type="module" src="../assets/js/index.js"></script>
 </html>

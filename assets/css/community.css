@@ -8,7 +8,11 @@ body {
     background-color: #ffffff;
     gap:3rem;
     font-family: "Mukta", sans-serif;
-    
+    background-color: #0B2447;
+    background-image:
+    linear-gradient(to right, rgb(255, 255, 255) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255, 255, 255) 1px, transparent 1px);
+    background-size: 10rem 10rem;
 }
 h1>a{
     padding:5px 50px;
@@ -87,11 +91,6 @@ cursor: pointer;
     align-items: center;
     text-align: center;
     border-radius: 10px;
-    background-color: #0B2447;
-    background-image:
-    linear-gradient(to right, rgb(255, 255, 255) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255, 255, 255) 1px, transparent 1px);
-  background-size: 10rem 10rem;
     padding:30px;
 }
 .card{
