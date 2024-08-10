@@ -8,7 +8,7 @@
 
 .image-slider {
     display: flex;
-    animation: 35s slide infinite linear;
+    animation: 10s slide infinite linear;
     transition: all 0.3s ease;
 }
 

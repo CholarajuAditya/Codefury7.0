@@ -2,39 +2,39 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
     position: relative;
     min-height: 100vh;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    color: #333;
 }
 
+/* Navigation Bar */
 nav {
-    background-color: rgb(244, 42, 42);
-    
+    background-color: #f42a2a;
     width: 100%;
-    height:10rem;
+    height: 10rem;
     display: flex;
     flex-direction: column;
-    gap:.5rem;
+    gap: 0.5rem;
 }
 
 nav ul {
-    margin: 1rem; 
-    margin-bottom: 0;
+    margin: 1rem 0;
+    padding-right: 1rem;
     width: 100%;
     display: flex;
     list-style: none;
     justify-content: flex-end;
     align-items: center;
-
-    background-color:inherit
-    height:5rem;
+    height: 5rem;
+    background-color: inherit;
 }
 
 nav li {
@@ -47,18 +47,20 @@ nav a {
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: black;
-    transition: all 0.2s ease;
+    color: #fff;
+    transition: background-color 0.2s ease;
 }
 
 nav a:hover {
-    background-color: rgb(170, 170, 170);
+    background-color: #aaa;
+    color: #000;
 }
 
-nav li:nth-child(1) {
+nav li:first-child {
     margin-right: auto;
 }
 
+/* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
@@ -66,30 +68,31 @@ nav li:nth-child(1) {
     height: 100vh;
     width: 250px;
     z-index: 999;
-    background-color: rgba(255, 255, 255, 0.177);
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
     display: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    padding: 1rem;
 }
 
 .sidebar li,
 .sidebar a {
     width: 100%;
+    padding: 0.5rem 1rem;
 }
 
 .menu-button {
     display: none;
 }
 
-/* hamburger-menu logo and close logo */
 nav ul i {
     font-size: 1.5rem;
 }
 
-
-@media(max-width: 800px) {
+/* Responsive Design */
+@media (max-width: 800px) {
     .hideOnMobile {
         display: none;
     }
@@ -99,48 +102,48 @@ nav ul i {
     }
 }
 
-@media(max-width: 400px) {
+@media (max-width: 400px) {
     .sidebar {
         width: 100%;
     }
 }
-.about-us-container{
+
+/* About Us Section */
+.about-us-container {
     display: flex;
     justify-content: center;
-    
+    flex-direction: column;
+    padding: 1rem;
 }
-#about-us{
-    border:1px solid black ;
+
+#about-us {
+    border: 1px solid #333;
     width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
     padding: 10px;
-    
-
+    border-radius: 10px;
 }
 
+/* Notification Carousel */
 .notification-carousel {
     width: 100%;
     overflow: hidden;
     background-color: inherit;
-    
-    
     padding: 20px;
     position: relative;
-
 }
 
 .carousel-content {
     display: flex;
-    animation: scroll 10s linear infinite;
+    animation: scroll 20s linear infinite;
 }
 
 .notification {
     padding: 10px;
-    margin-right: 50px; /* Space between notifications */
-    white-space: wrap;
+    margin-right: 50px;
+    white-space: nowrap;
 }
 
 @keyframes scroll {
@@ -151,12 +154,14 @@ nav ul i {
         transform: translateX(-100%);
     }
 }
+
+/* Footer */
 footer {
-    background-color: rgb(255, 0, 0);
+    background-color: #f00;
     position: absolute;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 .footer-container {
@@ -168,7 +173,7 @@ footer {
     height: 3rem;
 }
 
-.footer-container .nav-links ul {
+.nav-links ul {
     display: flex;
     list-style: none;
     justify-content: center;
@@ -176,59 +181,53 @@ footer {
 
 .nav-links ul li {
     padding: 0 10px;
-    border-right: 2px solid black;
-
+    border-right: 2px solid #000;
 }
 
 .nav-links ul li a {
     text-decoration: none;
-    color: black;
-    transition: all 1s ease-in-out;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
 }
 
-
-
 .nav-links ul li:first-child {
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 .nav-links ul li:nth-child(3) {
     border-right: none;
 }
 
-.footer-container .social-media {
+.nav-links ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.social-media {
     display: flex;
     justify-content: center;
     font-size: 25px;
 }
 
-.footer-container .social-media i {
+.social-media i {
     padding: 0 5px;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: font-size 0.1s ease-in-out;
 }
 
-.footer-container .social-media i:last-child {
-    padding-right: 0px;
-}
-
-.nav-links ul li a:hover {
-    text-decoration: underline;
-}
-
-.footer-container .social-media i:hover {
+.social-media i:hover {
     font-size: 30px;
     padding: 0;
 }
-#logo{
-    width: 50px;
 
+/* Logo and Button Styling */
+#logo {
+    width: 50px;
 }
-li>div{
-    background-color: azure;
+
+li > div {
+    background-color: #f0f8ff;
     border-radius: 30px;
-    padding-top: 3px;
+    padding: 3px 0 0 3px;
     width: 55px;
-    padding-left: 3px;
-    
 }
