@@ -181,3 +181,30 @@ iframe{
     box-shadow: 7px 7px 0px 0px #0B2447;
     color: red;
 }
+
+@media only screen and (width < 640px) {
+    iframe{
+        width: 80vw;
+        height: 50vw;
+    }
+    .address{
+        flex-direction: column;
+        font-size: small;
+        border-radius: 10px;
+    }
+    #addPlaces .top{
+        flex-direction: column;
+        align-items: center;
+    }
+    #addPlaces .leftManual{
+        max-width: 90%;
+    }
+    #addPlaces .rightAuto{
+        width: 90%;
+    }
+    #shelterResults{
+        height: 90vw;
+        padding: 10px;
+        overflow-y: auto;
+    }
+}
