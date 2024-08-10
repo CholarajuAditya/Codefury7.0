@@ -21,6 +21,8 @@ const auth = getAuth();
 const db = getFirestore();
 
 onAuthStateChanged(auth, (user) => {
+    const loginButtons = document.querySelectorAll('#loginButton'); // Select all elements with id 'loginButton'
+
     if (user) {
         console.log('User is signed in:', user);
 
@@ -32,7 +34,9 @@ onAuthStateChanged(auth, (user) => {
             if (docSnap.exists()) {
                 const userData = docSnap.data();
                 const userName = document.getElementById('userName');
-                userName.textContent = `Hello, ${userData.firstName}`;
+                if (userName) {
+                    userName.textContent = `Hello, ${userData.firstName}`;
+                }
             } else {
                 console.log('No such document!');
             }
@@ -40,20 +44,32 @@ onAuthStateChanged(auth, (user) => {
             console.error('Error getting document:', error);
         });
 
-        // Update the login/logout button
-        const loginButton = document.getElementById('loginButton');
-        loginButton.textContent = 'Logout';
-        loginButton.addEventListener('click', () => {
-            signOut(auth).then(() => {
-                window.location.reload();
-            }).catch((error) => {
-                console.error('Error signing out:', error);
+        // Update all login/logout buttons
+        loginButtons.forEach(button => {
+            button.textContent = 'Logout';
+            button.addEventListener('click', () => {
+                signOut(auth).then(() => {
+                    window.location.reload();
+                }).catch((error) => {
+                    console.error('Error signing out:', error);
+                });
             });
         });
+
     } else {
         console.log('User is signed out.');
-        document.getElementById('userName').textContent = '';
-        document.getElementById('loginButton').textContent = 'Login';
+
+        // Reset the userName if available
+        const userName = document.getElementById('userName');
+        if (userName) {
+            userName.textContent = '';
+        }
+
+        // Reset all login/logout buttons
+        loginButtons.forEach(button => {
+            button.textContent = 'Login';
+        });
     }
 });
+
 
