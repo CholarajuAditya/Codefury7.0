@@ -1,11 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav {
+    background-color: rgb(244, 42, 42);
+    
+    width: 100%;
+    height:10rem;
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
+}
+
+nav ul {
+    margin: 1rem; 
+    margin-bottom: 0;
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    align-items: center;
+
+    background-color:inherit
+    height:5rem;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgb(170, 170, 170);
+}
+
+nav li:nth-child(1) {
+    margin-right: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.177);
+    backdrop-filter: blur(20px);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.sidebar li,
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+/* hamburger-menu logo and close logo */
+nav ul i {
+    font-size: 1.5rem;
+}
+
+
+@media(max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
+
+@media(max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+.about-us-container{
+    display: flex;
+    justify-content: center;
+    
+}
+#about-us{
+    border:1px solid black ;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 10px;
+    
+
+}
+
 .notification-carousel {
     width: 100%;
     overflow: hidden;
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    background-color: inherit;
+    
+    
+    padding: 20px;
     position: relative;
+
 }
 
 .carousel-content {
@@ -26,4 +150,85 @@
     100% {
         transform: translateX(-100%);
     }
+}
+footer {
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+.footer-container {
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+}
+
+.footer-container .nav-links ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.nav-links ul li {
+    padding: 0 10px;
+    border-right: 2px solid black;
+
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: black;
+    transition: all 1s ease-in-out;
+}
+
+
+
+.nav-links ul li:first-child {
+    padding-left: 0px;
+}
+
+.nav-links ul li:nth-child(3) {
+    border-right: none;
+}
+
+.footer-container .social-media {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.footer-container .social-media i {
+    padding: 0 5px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.footer-container .social-media i:last-child {
+    padding-right: 0px;
+}
+
+.nav-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-container .social-media i:hover {
+    font-size: 30px;
+    padding: 0;
+}
+#logo{
+    width: 50px;
+
+}
+li>div{
+    background-color: azure;
+    border-radius: 30px;
+    padding-top: 3px;
+    width: 55px;
+    padding-left: 3px;
+    
 }
