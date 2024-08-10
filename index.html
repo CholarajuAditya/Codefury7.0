@@ -5,46 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AidGrid</title>
+    <link rel="stylesheet" href="./assets/css/elements.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/footer.css" />
-    <link rel="stylesheet" href="./assets/css/header.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <link rel="stylesheet" href="./assets/css/image-carousel.css">
+    <link rel="stylesheet" href="./assets/css/image-carousel.css"
 </head>
 <body>
-    <nav>
-        <ul class="sidebar">
-            <li onclick="hideSidebar()"><a href="#"><i class='bx bx-x'></i></a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="./views/login.html">Login</a></li>
-            <li><a href="./views/resource.html">Resource</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <ul>
-            <li><div><img src="./assets/images/codefurylogo.png" alt=""id="logo"></div></li>
-            <li class="hideOnMobile"><a href="#">Home</a></li>
-            <li class="hideOnMobile"><a href="./views/login.html">Login</a></li>
-            <li><a href="./views/resource.html">Resource</a></li>
-            <li class="hideOnMobile"><a href="#">About Us</a></li>
-            <li class="hideOnMobile"><a href="#">Contact</a></li>
-            <li class="menu-button" onclick="showSidebar()"><a href="#"><i class='bx bx-menu'></i></a></li>
-        </ul>
-        <div class="notification-carousel">
-            <div class="carousel-content" id="carousel">
-                <div class="notification">Notification 1: New message received</div>
-                <div class="notification">Notification 2: Your order has been shipped</div>
-                <div class="notification">Notification 3: Update available for download</div>
-                
-            </div>
+    <nav id="navbar" style="display: flex;">
+        <div class="logo">
+            <img src="./assets/images/codefurylogo.png" alt="nil">
         </div>
+        <div class="navItems">
+            <ul>
+                <li><a href="./views/resource.html">Resources</a></li>
+                <li><a href="#container3">About US</a></li>
+                <li><a href="#container5">Contact Us</a></li>
+                <button class="animated-button">
+                    <span><a href="./views/login.html">Login</a></span>
+                    <span></span>
+                </button>
+            </ul>
+        </div>
+        <label class="hamburger" for="hamburger">
+            <input type="checkbox" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
     </nav>
-   
-   
-    
-    <main>
-        
+    <div id="myNav" class="overlay">
+        <div class="overlay-content">
+            <a href="#container2">About Us</a>
+            <a href="#container3">Our Team</a>
+            <a href="#container4">Services</a>
+            <a href="#container5">Contact Us</a>
+        </div>
+    </div>
+    <main id="mainOnlyForMargin">
         </div>
         <div class="about-us-container">
             <div class="image-carousel">
@@ -195,4 +194,40 @@
     <script src="./views/index.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
+<script>
+    const hamburgerSwitch = document.querySelector('.hamburger input');
+    const navFont = document.querySelectorAll('.overlay-content a');
+
+    hamburgerSwitch.addEventListener('change', function() {
+        if (this.checked) {
+            openNav();
+        } else {
+            closeNav();
+        }
+    });
+    navFont.forEach(link => {
+        link.addEventListener('click', function () {
+            closeNav();
+            hamburgerSwitch.click();
+        });
+    });
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    }
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+    window.onload = function() {
+        var referenceDiv = document.getElementById('navbar');
+        var targetDiv = document.getElementById('mainOnlyForMargin');
+        
+        function updateMargin() {
+            var referenceHeight = referenceDiv.offsetHeight;
+            targetDiv.style.marginTop = referenceHeight+ 1 + 'px';
+        }
+
+        updateMargin(); // Initial call
+        window.addEventListener('resize', updateMargin); // Update on resize
+    };
+</script>
 </html>
