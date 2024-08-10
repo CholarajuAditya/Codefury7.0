@@ -16,4 +16,4 @@ setTimeout(() => {
     newNotification.className = 'notification';
     newNotification.textContent = 'Notification 4: A new event is coming up!';
     carousel.appendChild(newNotification);
-}, 5000);
+}, 0000);
