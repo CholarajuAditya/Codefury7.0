@@ -17,7 +17,7 @@ body {
 
 /* Navigation Bar */
 nav {
-    background-color: #f42a2a;
+    background-color: #ff4c2d;
     width: 100%;
     height: 10rem;
     display: flex;
@@ -49,10 +49,11 @@ nav a {
     align-items: center;
     color: #fff;
     transition: background-color 0.2s ease;
+    font-weight: bold;
 }
 
 nav a:hover {
-    background-color: #aaa;
+    background-color: rgb(255, 0, 0);
     color: #000;
 }
 
@@ -137,7 +138,7 @@ nav ul i {
 
 .carousel-content {
     display: flex;
-    animation: scroll 20s linear infinite;
+    animation: scroll 30s linear infinite;
 }
 
 .notification {
