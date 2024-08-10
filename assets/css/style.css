@@ -1,22 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #333;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #ff4c2d;
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+nav ul {
+    margin: 1rem 0;
+    padding-right: 1rem;
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    align-items: center;
+    height: 5rem;
+    background-color: inherit;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    transition: background-color 0.2s ease;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: rgb(255, 0, 0);
+    color: #000;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.sidebar li,
+.sidebar a {
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+.menu-button {
+    display: none;
+}
+
+nav ul i {
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+/* About Us Section */
+.about-us-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+#about-us {
+    border: 1px solid #333;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Notification Carousel */
 .notification-carousel {
     width: 100%;
     overflow: hidden;
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    background-color: inherit;
+    padding: 20px;
     position: relative;
 }
 
 .carousel-content {
     display: flex;
-    animation: scroll 10s linear infinite;
+    animation: scroll 30s linear infinite;
 }
 
 .notification {
     padding: 10px;
-    margin-right: 50px; /* Space between notifications */
-    white-space: wrap;
+    margin-right: 50px;
+    white-space: nowrap;
 }
 
 @keyframes scroll {
@@ -26,4 +154,81 @@
     100% {
         transform: translateX(-100%);
     }
+}
+
+/* Footer */
+footer {
+    background-color: #f00;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.footer-container {
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.nav-links ul li {
+    padding: 0 10px;
+    border-right: 2px solid #000;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links ul li:first-child {
+    padding-left: 0;
+}
+
+.nav-links ul li:nth-child(3) {
+    border-right: none;
+}
+
+.nav-links ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.social-media i {
+    padding: 0 5px;
+    cursor: pointer;
+    transition: font-size 0.1s ease-in-out;
+}
+
+.social-media i:hover {
+    font-size: 30px;
+    padding: 0;
+}
+
+/* Logo and Button Styling */
+#logo {
+    width: 50px;
+}
+
+li > div {
+    background-color: #f0f8ff;
+    border-radius: 30px;
+    padding: 3px 0 0 3px;
+    width: 55px;
 }
