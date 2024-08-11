@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community</title>
-    <script type="module" src="../firebase/firebaseCommunity.js"></script>
+   
     <link rel="stylesheet" href="../assets/css/community.css">
     <link rel="stylesheet" href="../assets/css/elements.css">
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
@@ -97,10 +97,11 @@
             var referenceHeight = referenceDiv.offsetHeight;
             targetDiv.style.marginTop = referenceHeight+ 1 + 'px';
         }
-
+        
         updateMargin(); // Initial call
         window.addEventListener('resize', updateMargin); // Update on resize
     };
 </script>
+<script type="module" src="../firebase/firebaseCommunity.js"></script>
 <script type="module" src="../assets/js/index.js"></script>
 </html>
