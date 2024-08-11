@@ -53,7 +53,7 @@ async function displayCommunityPosts() {
     const querySnapshot = await getDocs(collection(db, "CommunityPosts"));
     
     querySnapshot.forEach(doc => {
-        const post = doc.data();
+        const post =  doc.data();
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `

@@ -23,10 +23,10 @@ body {
 }
 h1 > a {
     padding: 5px 50px;
-
+    background-color: #ff4c2d;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 3rem;
     transition: 0.1s;
     word-wrap: break-word;
 }
@@ -36,14 +36,14 @@ h1 a:hover {
 }
 
 /* Medium screens */
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     h1 {
         font-size: 1.5rem; /* Reduced size for medium screens */
     }
 }
 
 /* Small screens */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     #header{
         width: max-content;
         word-wrap:normal;
@@ -51,7 +51,7 @@ h1 a:hover {
     }
     h1 {
         font-size: 1.1rem; /* Further reduced size for small screens */
-        width:fit-content;
+        width:16rem;
         text-align: center;
     }
     
@@ -178,14 +178,14 @@ input[type="file"] {
 }
 
 /* Medium screens */
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .card {
         width: calc(50% - 2rem); /* 2 cards per row for medium screens */
     }
 }
 
 /* Small screens */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .card {
         width: calc(100% - 2rem); /* 1 card per row for small screens */
     }
