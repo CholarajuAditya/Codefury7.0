@@ -87,11 +87,44 @@ li>div {
         grid-template-columns: 1fr;
     }
     
+
     .what-we-do .content-card {
         padding: 15px;
     }
     
     .what-we-do .content-card h3 {
         font-size: 1.25rem;
+    }
+}
+
+.notification-carousel {
+    width: 100%;
+    overflow: hidden;
+    background-color: #1d0683;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    position: relative;
+    color: whitesmoke;
+}
+
+.carousel-content {
+    display: flex;
+    animation: scroll 25s linear infinite;
+}
+
+.notification {
+    padding: 10px;
+    margin-right: 50px; /* Space between notifications */
+    white-space: nowrap;
+    /* width: 100%; */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
