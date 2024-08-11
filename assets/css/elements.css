@@ -279,10 +279,6 @@ body::-webkit-scrollbar {
       border-radius: 1rem;
       width: 70vw;
     }
-    #container2 img #image1{
-      width: 75vw;
-      height: auto;
-    }
   }
   footer {
     background-color: #112280;

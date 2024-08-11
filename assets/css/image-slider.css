@@ -23,7 +23,6 @@
     height: 100%;
     object-fit: cover;
 }
-
 .slider .buttons {
     position: absolute;
     top: 45%;
@@ -38,6 +37,7 @@
     height: 50px;
     border-radius: 50%;
     background-color: #0B2447;
+    opacity: 50%;
     color: #fff;
     border: none;
     font-family: monospace;
